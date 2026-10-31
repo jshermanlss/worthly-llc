@@ -12,18 +12,12 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!--
-    TODO: Liability is capped at the amount paid for credits in the prior 12 months, carried from the previously published terms. The source extract did not re-check that clause. Confirm Worthly LLC wants that cap.
-    TODO: These terms use the laws of the Commonwealth of Virginia and courts in Virginia, with no county named. The source extract did not check the governing-law clause in legal.ts. Confirm exclusive venue and whether to name a city or county.
-    TODO: Account creation requires age 18, matching the previously published terms. The source extract confirms only that the app is not directed at children under 13. Google Play rates the app Everyone. Confirm the age rule.
-    TODO: No street address is published. Add one only if the owner wants it on the public site.
-  -->
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.html">
         <img class="brand-mark" src="assets/icon.png" width="1024" height="1024" alt="">
-        <span class="brand-name">Worthly<span>Worthly LLC</span></span>
+        <span class="brand-name">Worthly</span>
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
@@ -40,7 +34,7 @@
       <header class="page-intro">
         <p class="kicker">Worthly LLC</p>
         <h1 class="page-title">Terms of Service</h1>
-        <p class="updated">Last updated October 31, 2026. These terms apply to the Worthly app, including the Android app “Worthly - Know what it's worth” (package <code>com.worthly.android</code>), and to worthly-llc.com. “We” and “us” mean Worthly LLC, the operator of the app.</p>
+        <p class="updated">Last updated October 31, 2026. These terms apply to the Worthly Android app and to worthly-llc.com. “We” and “us” mean Worthly LLC.</p>
       </header>
 
       <p>By creating an account or using the app, you agree to these terms. If you do not agree, do not use the app. The <a href="privacy.html">Privacy Policy</a> explains how information is handled and is part of these terms.</p>
@@ -51,7 +45,7 @@
 
       <h2 id="account">Your account</h2>
       <ul>
-        <li>You sign in with Google or with an email address and password through Firebase Authentication. You are responsible for activity on your account and for keeping those credentials secure.</li>
+        <li>You sign in with Google or with an email address and password. You are responsible for activity on your account and for keeping your sign-in secure.</li>
         <li>You must be at least 18 years old, or the age of majority where you live if that age is higher, and able to enter a binding agreement, including an agreement with eBay if you list there.</li>
         <li>You may delete your account at any time. See <a href="delete-account.html">Delete your account</a>.</li>
       </ul>
@@ -65,28 +59,28 @@
 
       <h2 id="credits">Credits</h2>
       <ul>
-        <li>A successful standard analysis costs 1 credit. That covers identifying an item, estimating its value, or drafting an eBay listing from photos. Re-analyzing costs the same.</li>
-        <li>Deep Research costs 4 credits. It adds a web search for recent sold prices, limited to eBay, WorthPoint, LiveAuctioneers, and Invaluable, with cited sources. The cost is shown before you start.</li>
-        <li>Publishing, updating, or ending a listing, without running another analysis, does not use an analysis credit.</li>
-        <li>Credits belong to your Worthly account and are available on devices where you sign in to that account.</li>
-        <li>Credits are a license to use the service. They have no cash value, cannot be redeemed for money, and cannot be transferred or sold to another account.</li>
-        <li>Deleting your account permanently deletes any credits that remain.</li>
+        <li>Each item analysis uses 1 credit, including re-analysis. You're only charged when the analysis succeeds.</li>
+        <li>Deep Research uses 4 credits. It also checks recent sold prices on eBay, WorthPoint, LiveAuctioneers, and Invaluable, with links to the sources. The cost is shown before you start.</li>
+        <li>Posting, updating, or ending a listing is free.</li>
+        <li>Credits belong to your Worthly account and follow you to any device you sign in on.</li>
+        <li>Credits are a license to use Worthly. They cannot be transferred or sold to another account.</li>
+        <li>Deleting your account erases unused credits and does not trigger a refund.</li>
       </ul>
 
       <h2 id="purchases">Purchases</h2>
-      <p>The Android app is free to install. Additional credits are sold as one-time consumable packs through Google Play Billing. RevenueCat validates the purchase and the credits are granted on your Worthly account. United States prices are:</p>
+      <p>The app is free to install. Additional credits are one-time packs in Google Play, not a subscription. United States prices are:</p>
       <ul>
-        <li>25 credits — <code>worthly_credits_25</code> — $4.99</li>
-        <li>100 credits — <code>worthly_credits_100</code> — $17.99</li>
-        <li>500 credits — <code>worthly_credits_500</code> — $84.99</li>
+        <li>25 credits — $4.99</li>
+        <li>100 credits — $17.99</li>
+        <li>500 credits — $84.99</li>
       </ul>
-      <p>These are not subscriptions. The price in the store’s purchase sheet is the price you pay. The store may show a different price outside the United States and may change prices. Refunds are handled by the store that charged you: Google Play for Android purchases, and Apple for purchases in the iOS app (bundle id <code>com.worthly.app</code>). Except where the law requires a refund, purchased credits are not refundable once they have been added to your account. We do not receive your full payment card number.</p>
+      <p>You pay the price shown at checkout in Google Play. Google Play may show local pricing outside the United States. Refunds are handled by Google Play. If a purchase is refunded, we remove that pack's unused credits from your balance. We do not receive your card number.</p>
 
       <h2 id="promo">Free and promotional credits</h2>
       <ul>
         <li>New accounts receive 10 free credits, once.</li>
-        <li>If you pre-registered for the app on Google Play, you may receive 10 additional credits through Google Play after you install the app and sign in. That reward uses product <code>worthly_prereg_10</code>, is limited to one per Google Play account, and cannot be exchanged for cash. Pre-registering does not require a payment.</li>
-        <li>Promotional credits follow the same rules as other credits, except they are not refundable. We may end a promotion for people who have not yet received it, and we may withhold or remove promotional credits obtained by fraud, abuse, or multiple accounts.</li>
+        <li>If you pre-registered on Google Play, you may receive 10 more credits after you install the app and sign in. That reward is limited to one per Google Play account and does not require a payment.</li>
+        <li>Free and promotional credits have no cash value and can't be refunded. We may end a promotion for people who have not yet received it, and we may withhold or remove promotional credits obtained by fraud, abuse, or multiple accounts.</li>
       </ul>
 
       <h2 id="use">Acceptable use</h2>
@@ -102,7 +96,7 @@
       <p>You keep ownership of the photos and listing content you create. You give Worthly LLC permission to process, store, and send that content to our service providers and to eBay as needed to operate the service. The <a href="privacy.html">Privacy Policy</a> describes those recipients.</p>
 
       <h2 id="third">Third-party services</h2>
-      <p>The app depends on services we do not control, including eBay, Google (Firebase Authentication, Google Cloud, and Google Play), Apple, RevenueCat, and OpenAI. Your use of eBay and the app stores is also governed by their terms. We are not responsible for their outages, policy changes, or decisions, including eBay’s actions on a listing or a seller account.</p>
+      <p>The app depends on services we do not control, including eBay, Google, and OpenAI. Your use of eBay and Google Play is also governed by their terms. We are not responsible for their outages, policy changes, or decisions, including eBay’s actions on a listing or a seller account.</p>
 
       <h2 id="end">Suspension and ending access</h2>
       <p>We may suspend or end access if you violate these terms or if we need to protect users, eBay, or the service. You may stop using the app and delete your account at any time. Sections that by their nature should survive, including disclaimers, liability limits, and governing law, survive after the account is gone.</p>
