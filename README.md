@@ -1,6 +1,6 @@
 # Worthly LLC
 
-Static website for [Worthly LLC](https://worthly-llc.com), publisher of the Android app **Worthly - Know what it's worth** (`com.worthly.android`).
+Static website for [Worthly LLC](https://worthly-llc.com), publisher of the Android app **Worthly**.
 
 The site is plain HTML and CSS. There is no build step. GitHub Pages serves the files in the repository root.
 
