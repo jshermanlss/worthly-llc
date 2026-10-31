@@ -118,10 +118,12 @@ a:hover {
   color: var(--ink);
 }
 
-.brand img {
+.brand-mark {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  display: block;
+  flex: none;
+  border-radius: 26%;
 }
 
 .brand-name {
@@ -242,7 +244,9 @@ a:hover {
 .hero-icon {
   justify-self: end;
   width: min(280px, 70%);
-  filter: drop-shadow(0 28px 40px rgba(0, 0, 0, 0.35));
+  height: auto;
+  display: block;
+  border-radius: 26%;
 }
 
 .section {
