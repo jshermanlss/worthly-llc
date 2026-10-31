@@ -4,18 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Delete your account — Worthly LLC</title>
-  <meta name="description" content="How to delete a Worthly account and the data Worthly LLC stores for the Android app Worthly - Know what it's worth.">
+  <meta name="description" content="How to delete a Worthly account and the data Worthly LLC stores for Worthly - Know what it's worth.">
   <link rel="canonical" href="https://worthly-llc.com/delete-account.html">
-  <meta name="theme-color" content="#08352f">
+  <meta name="theme-color" content="#0F766E">
   <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <!--
-    TODO: ListGenie is still unreadable after access was granted (HTTP 404). This agent's GitHub installation can only see jshermanlss/worthly-llc. The in-app path (Account, then Delete Worthly account), the 30-day email handling, and the retention exceptions come from the deletion page the app already publishes (August 18, 2026). Confirm the menu labels still match the app.
-    TODO: "Listing images may remain briefly" has no stated number of days. Confirm the cleanup window.
-    TODO: Support email jsherman314@gmail.com was taken from the Play listing and that deletion page.
+    TODO: Listing images stored in Google Cloud Storage, and server security logs, do not have a stated retention period in the source notes. The deletion routine removes the user, sessions, credits, and eBay tokens, and clears on-device drafts and photos. Confirm whether stored listing images are deleted in that same request, and how long logs are kept.
   -->
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
@@ -42,46 +40,43 @@
         <p class="updated">Last updated October 31, 2026. App: Worthly - Know what it's worth, Android package <code>com.worthly.android</code>, published by Worthly LLC.</p>
       </header>
 
-      <p>Worthly accounts are separate from eBay. You sign in with Google or with an email address and password. Linked eBay seller accounts and analysis credits sit on that Worthly account. This page is the public way to request deletion of the account and the data Worthly LLC stores for it. You do not need to be signed in on this website.</p>
+      <p>Worthly accounts are separate from eBay. You sign in with Google or with an email address and password. Linked eBay seller accounts and analysis credits sit on that Worthly account. This page is the public way to delete the account and the data Worthly LLC stores for it. You do not need to be signed in on this website.</p>
 
       <h2 id="in-app">Delete in the app</h2>
-      <p>This is the fastest path. It takes effect on our servers when you confirm.</p>
+      <p>This is the fastest path. It runs when you confirm.</p>
       <ol>
         <li>Open Worthly on your device.</li>
         <li>Sign in if you are not already signed in.</li>
         <li>Tap <strong>Account</strong> in the title bar.</li>
         <li>Tap <strong>Delete Worthly account</strong> and confirm.</li>
       </ol>
-      <p>That deletes the account on our servers: the email or Google identity, hashed sessions, the credit balance, and linked eBay tokens. It also clears related drafts and photos on the device you are using. Live eBay listings are not ended.</p>
-      <!-- TODO: Confirm the control is still labeled "Delete Worthly account" under Account in the title bar. -->
+      <p>That deletes the account on our servers: the email or Google identity, hashed sessions, the credit balance, and linked eBay sellers and tokens. On that device it also clears local assessments, preferences, drafts, photos, and eBay-linked data. Live eBay listings are not ended.</p>
 
       <h2 id="email">Request by email</h2>
-      <p>If you cannot use the app, email <a href="mailto:jsherman314@gmail.com?subject=Account%20deletion%20request">jsherman314@gmail.com</a> with the subject <strong>Account deletion request</strong> and include:</p>
+      <p>If you cannot use the app, email <a href="mailto:support@worthly-llc.com?subject=Account%20deletion%20request">support@worthly-llc.com</a> with the subject <strong>Account deletion request</strong> and include:</p>
       <ul>
         <li>The email address on the Worthly account, and</li>
-        <li>Any linked eBay username (user id) that helps us verify the request.</li>
+        <li>Any linked eBay username that helps us verify the request.</li>
       </ul>
-      <p>We aim to complete a verified deletion request within 30 days. We may ask a follow-up question if we cannot match the account.</p>
+      <p>We complete a verified deletion request within 30 days. We may ask a follow-up question if we cannot match the account.</p>
       <div class="button-row">
-        <a class="button" href="mailto:jsherman314@gmail.com?subject=Account%20deletion%20request">Email a deletion request</a>
+        <a class="button" href="mailto:support@worthly-llc.com?subject=Account%20deletion%20request">Email a deletion request</a>
       </div>
-      <!-- TODO: Confirm the 30-day target is still the commitment. -->
 
       <h2 id="deleted">What we delete</h2>
       <ul>
         <li>Your user record: email or Google identity, hashed sessions, credit balance, and purchase identifiers we store.</li>
         <li>Linked eBay seller records, including encrypted refresh tokens and stored policy ids.</li>
-        <li>On-device drafts, assessments, and gallery photos when you delete the account in the app on that device.</li>
+        <li>On the device you use for in-app deletion: local assessments, preferences, drafts, photos, and other eBay-linked data stored on that device.</li>
       </ul>
 
-      <h2 id="kept">What we may keep, and what we do not control</h2>
+      <h2 id="kept">What we do not control, and what may remain</h2>
       <ul>
         <li>eBay listings and your eBay account stay on eBay. Deleting Worthly does not end live listings and does not close eBay. End listings in the app or in eBay Seller Hub first if you want them removed from eBay.</li>
-        <li>Google Play purchase records stay with Google under Google’s policies. Deleting Worthly does not refund a credit pack.</li>
-        <li>Listing images already uploaded so eBay could fetch them may remain briefly for operational cleanup. They are not used to identify you after the account is deleted.</li>
-        <li>Security or legal logs may be kept for a limited period when we need them for security, fraud prevention, or the law. They are not used to keep providing the deleted account.</li>
+        <li>If eBay tells us a marketplace account was deleted, we unlink that seller only. Your Worthly account and credits stay until you delete them.</li>
+        <li>Google Play and Apple purchase records stay with those stores. Deleting Worthly does not refund a credit pack.</li>
+        <li>Security logs may be kept where we need them for security, fraud prevention, or the law. They are not used to keep providing the deleted account.</li>
       </ul>
-      <!-- TODO: Replace "briefly" and "a limited period" with the actual retention windows. -->
 
       <h2 id="compare">Sign out, unlink eBay, or delete</h2>
       <div class="table-wrap">
@@ -100,11 +95,11 @@
             </tr>
             <tr>
               <th scope="row">Unlink eBay</th>
-              <td>Removes that seller from the Worthly account. Credits stay. If eBay tells us a marketplace account was deleted, we unlink that seller only.</td>
+              <td>Removes that seller from the Worthly account. Credits stay. An eBay marketplace account-deletion notice unlinks that seller only.</td>
             </tr>
             <tr>
               <th scope="row">Delete Worthly account</th>
-              <td>Removes the user, all linked sellers, sessions, and credits.</td>
+              <td>Removes the user, all linked sellers, sessions, and credits, and clears related data on the device you are using. Live eBay listings stay up.</td>
             </tr>
           </tbody>
         </table>
@@ -112,7 +107,7 @@
 
       <h2 id="contact">Contact</h2>
       <p>Worthly LLC<br>
-      <a href="mailto:jsherman314@gmail.com">jsherman314@gmail.com</a></p>
+      <a href="mailto:support@worthly-llc.com">support@worthly-llc.com</a></p>
       <p>Related pages: <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>.</p>
     </article>
   </main>

@@ -1,20 +1,21 @@
 :root {
-  --ink: #14221e;
-  --muted: #3e524b;
-  --paper: #f3efe6;
-  --paper-2: #fffdf8;
-  --line: #e3d8c4;
-  --green: #08352f;
-  --green-deep: #062924;
-  --teal: #087068;
-  --teal-deep: #06564f;
-  --gold: #c4964a;
-  --gold-line: #d7b36a;
-  --cream: #f3e6cf;
-  --focus: #8a5a12;
-  --shadow: 0 22px 50px rgba(8, 53, 47, 0.16);
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-  --sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --ink: #1f1f1f;
+  --muted: #5c5a54;
+  --paper: #f7f5f0;
+  --paper-2: #ffffff;
+  --line: #d4cfc4;
+  --green: #166534;
+  --green-deep: #1f1f1f;
+  --teal: #0f766e;
+  --teal-deep: #166534;
+  --gold: #d4af37;
+  --gold-line: #d4af37;
+  --brass: #b08d57;
+  --cream: #f7f5f0;
+  --accent-bg: #f5eed6;
+  --focus: #166534;
+  --shadow: 0 22px 50px rgba(31, 31, 31, 0.14);
+  --sans: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --max: 1120px;
   --measure: 68ch;
@@ -37,11 +38,9 @@ body {
   flex-direction: column;
   font-family: var(--sans);
   color: var(--ink);
-  background:
-    radial-gradient(900px 420px at 100% -10%, rgba(212, 175, 100, 0.16), transparent 60%),
-    var(--paper);
+  background: var(--paper);
   line-height: 1.6;
-  font-size: 1.0625rem;
+  font-size: 1rem;
 }
 
 main {
@@ -54,7 +53,7 @@ img {
 }
 
 a {
-  color: var(--teal-deep);
+  color: var(--teal);
 }
 
 a:hover {
@@ -67,7 +66,7 @@ a:hover {
 }
 
 ::selection {
-  background: #ead7ae;
+  background: var(--accent-bg);
   color: var(--ink);
 }
 
@@ -126,7 +125,7 @@ a:hover {
 }
 
 .brand-name {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.35rem;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -158,19 +157,19 @@ a:hover {
 }
 
 .nav a[aria-current="page"] {
-  background: #efe6d4;
+  background: var(--accent-bg);
   font-weight: 600;
 }
 
 .nav a:hover {
-  background: #efe6d4;
+  background: var(--accent-bg);
   color: var(--ink);
 }
 
 .hero {
   background:
-    radial-gradient(900px 420px at 88% 0%, rgba(215, 179, 106, 0.22), transparent 55%),
-    linear-gradient(165deg, var(--green-deep) 0%, #0c463d 58%, var(--green) 100%);
+    radial-gradient(720px 340px at 88% -10%, rgba(15, 118, 110, 0.42), transparent 58%),
+    var(--green-deep);
   color: var(--cream);
   padding: 3.6rem 0 3.3rem;
 }
@@ -187,18 +186,18 @@ a:hover {
   text-transform: uppercase;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--teal-deep);
+  color: var(--teal);
   margin: 0 0 0.75rem;
 }
 
 .hero .kicker {
-  color: var(--cream);
+  color: var(--gold);
 }
 
 .hero h1,
 .page-title {
-  font-family: var(--serif);
-  font-weight: 500;
+  font-family: var(--sans);
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.04;
   margin: 0 0 1rem;
@@ -206,7 +205,7 @@ a:hover {
 
 .hero h1 {
   font-size: clamp(2.7rem, 6vw, 4.6rem);
-  color: #fffdf8;
+  color: var(--cream);
   text-wrap: balance;
 }
 
@@ -231,13 +230,13 @@ a:hover {
 }
 
 .hero-meta {
-  color: #e4eee9;
+  color: #ede9e0;
   font-size: 0.95rem;
   margin: 0.35rem 0 0;
 }
 
 .hero-meta a {
-  color: #fffdf8;
+  color: var(--cream);
 }
 
 .hero-icon {
@@ -253,8 +252,8 @@ a:hover {
 .section h2,
 .card h2,
 .legal-prose h2 {
-  font-family: var(--serif);
-  font-weight: 500;
+  font-family: var(--sans);
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
 }
@@ -327,8 +326,8 @@ a:hover {
 .step h3,
 .choice h3,
 .pack h3 {
-  font-family: var(--serif);
-  font-weight: 500;
+  font-family: var(--sans);
+  font-weight: 700;
   font-size: 1.45rem;
   margin: 0 0 0.4rem;
   letter-spacing: -0.02em;
@@ -348,18 +347,17 @@ a:hover {
 }
 
 .shots {
-  background:
-    radial-gradient(700px 280px at 10% 0%, rgba(215, 179, 106, 0.16), transparent 60%),
-    var(--green);
+  background: var(--green-deep);
   color: var(--cream);
+  border-top: 2px solid var(--gold);
 }
 
 .shots h2 {
-  color: #fffdf8;
+  color: var(--cream);
 }
 
 .shots .section-intro {
-  color: #e7efe9;
+  color: #ede9e0;
 }
 
 .shot-row {
@@ -393,7 +391,7 @@ a:hover {
 .shot-row figcaption {
   margin-top: 0.6rem;
   font-size: 0.9rem;
-  color: #e7efe9;
+  color: #ede9e0;
 }
 
 .table-wrap {
@@ -423,7 +421,7 @@ tr:last-child td {
 }
 
 th {
-  background: #efe8d8;
+  background: #ede9e0;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -435,7 +433,7 @@ th {
 }
 
 .pack .price {
-  color: var(--teal-deep);
+  color: var(--teal);
   font-weight: 600;
 }
 
@@ -486,13 +484,13 @@ dl.identity dd {
 
 .button.secondary {
   background: transparent;
-  color: var(--green);
-  border: 1px solid #cabb9f;
+  color: var(--ink);
+  border: 1px solid var(--line);
 }
 
 .button.secondary:hover {
-  background: #efe6d4;
-  color: var(--green);
+  background: var(--accent-bg);
+  color: var(--ink);
 }
 
 .button-row {
@@ -503,8 +501,9 @@ dl.identity dd {
 }
 
 .site-footer {
-  background: var(--green);
-  color: #e7efe9;
+  background: var(--green-deep);
+  color: #ede9e0;
+  border-top: 2px solid var(--gold);
   padding: 1.7rem 0 2rem;
   margin-top: auto;
 }
@@ -520,7 +519,7 @@ dl.identity dd {
 }
 
 .site-footer a {
-  color: #fffdf8;
+  color: var(--cream);
 }
 
 .site-footer p {
