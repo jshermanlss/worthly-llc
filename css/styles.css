@@ -123,7 +123,7 @@ a:hover {
   height: 44px;
   display: block;
   flex: none;
-  border-radius: 22%;
+  border-radius: 26%;
 }
 
 .brand-name {
@@ -246,7 +246,7 @@ a:hover {
   width: min(280px, 70%);
   height: auto;
   display: block;
-  border-radius: 22%;
+  border-radius: 26%;
 }
 
 .section {
