@@ -6,18 +6,15 @@
   <title>Privacy Policy — Worthly LLC</title>
   <meta name="description" content="Privacy policy for the Worthly Android app and the Worthly LLC website. What the app collects, who it is shared with, and how to delete an account.">
   <link rel="canonical" href="https://worthly-llc.com/privacy.html">
-  <meta name="theme-color" content="#08352f">
+  <meta name="theme-color" content="#0F766E">
   <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <!--
-    TODO: ListGenie is still unreadable after access was granted (HTTP 404). This agent's GitHub installation can only see jshermanlss/worthly-llc. Account fields, eBay token handling, OpenAI, Google Cloud storage, Firebase user ids, location use, and diagnostic logs below follow the privacy policy the app already publishes at its Cloud Run host (last updated August 18, 2026) plus the Google Play listing. Confirm each item against source before relying on this page for Play Console.
-    TODO: Google Play Data safety says the app may collect and share Location, Personal info, and three other categories the public summary does not name. Name those categories here.
-    TODO: No analytics or crash SDK (Firebase Analytics, Crashlytics, or similar) was identified. Confirm the app does not ship one.
-    TODO: Deep Research is described in the app as a web search for recent sold prices. The search provider is not named.
-    TODO: Support email jsherman314@gmail.com is from the Play listing and the existing policy, not from source.
+    TODO: Account deletion removes the user record, sessions, credits, and eBay tokens, and clears drafts and photos on the device used. The source notes do not say how long listing images in Google Cloud Storage, or server security logs, are kept after that. Do not state a number of days until the owner confirms it.
+    TODO: No street address is published. The app policies name Worthly LLC on this site and do not include a street address. Add one only if the owner wants the Play Console address on the public site.
   -->
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
@@ -41,10 +38,10 @@
       <header class="page-intro">
         <p class="kicker">Worthly LLC</p>
         <h1 class="page-title">Privacy Policy</h1>
-        <p class="updated">Last updated October 31, 2026. This policy covers the Android app “Worthly - Know what it's worth” (package <code>com.worthly.android</code>) and the website worthly-llc.com. “We” and “us” mean Worthly LLC.</p>
+        <p class="updated">Last updated October 31, 2026. This policy covers the Android app “Worthly - Know what it's worth” (package <code>com.worthly.android</code>) and the website worthly-llc.com. “We” and “us” mean Worthly LLC, the operator of the app.</p>
       </header>
 
-      <p>Worthly lets you photograph an item, generate an AI-assisted value assessment or eBay listing draft, and publish to an eBay seller account you connect. This policy says what information that takes, who receives it, and how to delete it.</p>
+      <p>Worthly lets you photograph an item, identify it, estimate its value, and draft a marketplace listing. You can publish, update, or end listings on eBay seller accounts you connect. This policy says what information that takes, who receives it, and how to delete it.</p>
 
       <nav aria-label="On this page">
         <ul class="toc">
@@ -65,86 +62,83 @@
 
       <h2 id="collect">Information we collect</h2>
       <h3>Account</h3>
-      <p>You sign in with Google or with an email address and password. We store your email, display name, a Firebase user id, and hashed app session tokens. Analysis credits live on the account and follow you to other devices where you sign in to the same account.</p>
-      <!-- TODO: Confirm Firebase Auth is the sign-in system and that the stored fields are exactly email, display name, Firebase uid, and hashed session tokens. -->
+      <p>You sign in with Google or with an email address and password through Firebase Authentication. We store your Firebase user id, email, display name, hashed session tokens, and credit balance in Cloud Firestore. After you sign in, our server issues a Worthly session token for later requests.</p>
 
       <h3>eBay connection</h3>
-      <p>You may link one or more eBay seller accounts. We receive identifiers such as your eBay user id and username, and the OAuth tokens needed to list, update, and end listings on your behalf. Refresh tokens are encrypted at rest. Listing and publishing use the eBay account you mark as active.</p>
-      <!-- TODO: Confirm refresh tokens are encrypted at rest and which eBay fields are stored (user id, username, policy ids). -->
+      <p>You may link one or more eBay seller accounts with eBay OAuth. We store the eBay user id, username, and policy ids, and the refresh token needed to list, update, and end listings on your behalf. Refresh tokens are encrypted with AES-256-GCM. Listing and publishing use the eBay account you mark as active.</p>
 
       <h3>Photos and listing content</h3>
-      <p>We process images you capture or select, and the titles, descriptions, prices, category and item specifics, shipping details, and other draft fields you create. Drafts are kept on the device for each connected eBay account. Listing images may be uploaded to our storage so eBay can fetch them when you publish.</p>
-      <!-- TODO: Confirm on-device draft storage versus what is uploaded, and that image hosting is Google Cloud storage. -->
+      <p>We process images you capture and the titles, descriptions, prices, categories, item specifics, shipping details, and other draft fields the app creates. Images you upload are stored in Google Cloud Storage so eBay can fetch them when you publish. Drafts and photos are also kept on your device in a local database.</p>
 
       <h3>Location</h3>
-      <p>With your permission, the app may use approximate or precise location for ship-from or regional pricing context. You can deny location permission. Some publish flows then ask you to enter a postal code instead.</p>
-      <!-- TODO: Confirm location is optional and used only for ship-from / regional pricing. Play Data safety lists Location as collected and shared. -->
+      <p>With your permission, the app may use fine or coarse location, only while the app is in use, for the eBay ship-from address and shipping calculation. You can deny location permission and enter a postal code instead.</p>
 
-      <h3>Device, session, and diagnostics</h3>
-      <p>We keep app session tokens on your device, and basic diagnostics such as request logs and error messages, plus technical metadata needed to run the service. We have not identified a separate advertising or product-analytics SDK in the materials this policy is based on.</p>
-      <!-- TODO: Confirm there is no Firebase Analytics, Crashlytics, Ads, or other analytics SDK. Name any diagnostic tool that is actually linked. -->
+      <h3>Camera and other device permissions</h3>
+      <p>The app asks for the camera so you can photograph items. It does not request the microphone, and it does not request broad access to read your media library.</p>
+
+      <h3>Diagnostics</h3>
+      <p>The service keeps basic diagnostics: request logs and error messages needed to run and troubleshoot it. The app does not include a product-analytics or crash-reporting SDK. There is no Sentry, Firebase Crashlytics, or Firebase Analytics package in the app.</p>
 
       <h2 id="use">How we use it</h2>
       <ul>
-        <li>To analyze item photos and generate listing drafts and pricing guidance, using an AI provider. The service description we already publish names OpenAI.</li>
-        <li>To run Deep Research, which the app describes as a web search for recent sold prices with cited sources.</li>
-        <li>To upload listing images so eBay can fetch them when you publish.</li>
-        <li>To authenticate you, keep you signed in, and call eBay APIs you authorize.</li>
-        <li>To keep your credit balance and reduce abuse of free or purchased credits.</li>
+        <li>To identify an item from photos, estimate its value, and write a listing draft. That analysis is done with OpenAI.</li>
+        <li>To stage a lifestyle image of an item, also with OpenAI, when you ask for one.</li>
+        <li>To run Deep Research, which uses OpenAI web search limited to ebay.com, worthpoint.com, liveauctioneers.com, and invaluable.com.</li>
+        <li>To store listing images so eBay can fetch them when you publish, and to call eBay APIs you authorize.</li>
+        <li>To authenticate you, keep you signed in, and keep your credit balance.</li>
         <li>To operate, secure, and troubleshoot the app.</li>
-        <li>To comply with law and with platform rules, including eBay marketplace account-deletion notifications.</li>
+        <li>To comply with law and with eBay’s marketplace account-deletion notices. When eBay sends one, we unlink that seller only.</li>
       </ul>
-      <!-- TODO: Confirm the AI provider is OpenAI and name the Deep Research search provider if it is a separate company. -->
 
       <h2 id="share">Who we share it with</h2>
       <p>We do not sell personal information. We share it only as needed to provide the service:</p>
       <ul>
-        <li><strong>eBay</strong> — listing content and the account actions you start.</li>
-        <li><strong>Google</strong> — sign-in, and Google Cloud for hosting and storage of the backend the app uses. Google Play distributes the app.</li>
-        <li><strong>OpenAI</strong> — image and text analysis used to draft listings and pricing guidance, as named in our existing service description.</li>
-        <li><strong>RevenueCat and Google Play</strong> — to validate in-app purchases and tell our servers to grant credits. See Purchases below.</li>
+        <li><strong>eBay</strong> — listing content and the account actions you start, through eBay’s selling APIs.</li>
+        <li><strong>Google</strong> — Firebase Authentication, and Google Cloud for the backend (Cloud Run), listing images (Cloud Storage), and account records (Firestore). Google Play distributes the Android app.</li>
+        <li><strong>OpenAI</strong> — photos and listing text sent for identification, valuation, listing copy, lifestyle image staging, and Deep Research.</li>
+        <li><strong>RevenueCat and the app stores</strong> — to validate in-app purchases and grant credits. Android purchases use Google Play Billing. Purchases in the iOS app are billed by Apple.</li>
         <li><strong>Authorities and safety</strong> — when the law requires it, or to protect users, eBay, or the service.</li>
       </ul>
-      <p>Google Play’s public Data safety summary says the app may collect and share location, personal info, and three other categories that the summary does not name on the store page. This policy is the fuller description. If a category is missing here, write to us and we will correct it.</p>
-      <!-- TODO: Fill in the three unnamed Play Data safety categories once they are confirmed. -->
 
       <h2 id="purchases">Purchases</h2>
-      <p>Paid credits are one-time consumable packs sold by Google Play Billing: 25, 100, or 500 credits (<code>worthly_credits_25</code>, <code>worthly_credits_100</code>, <code>worthly_credits_500</code>). RevenueCat validates the purchase. Our backend receives the purchase notification and stores the credit balance and the purchase identifiers needed to grant credits. We do not receive your full payment card number. A separate non-consumable Play product, <code>worthly_prereg_10</code>, is used only to deliver a pre-registration credit reward, not as a paid pack.</p>
-      <p>Google Play and RevenueCat process purchase data under their own policies. App store purchase records stay with Google even if you delete your Worthly account.</p>
+      <p>Paid credits on Android are one-time consumable packs sold by Google Play Billing: 25 credits for $4.99, 100 credits for $17.99, and 500 credits for $84.99 in the United States (<code>worthly_credits_25</code>, <code>worthly_credits_100</code>, <code>worthly_credits_500</code>). RevenueCat validates the purchase. Our server receives the purchase notification and stores the credit balance and the purchase identifiers needed to grant credits. We do not receive your full payment card number. A separate Play product, <code>worthly_prereg_10</code>, delivers a 10-credit pre-registration reward. It is not a paid pack.</p>
+      <p>Google Play, Apple, and RevenueCat process purchase data under their own policies. Store purchase records stay with the store even if you delete your Worthly account.</p>
 
       <h2 id="retention">Retention and deletion</h2>
-      <p>We keep your account, linked eBay credentials, and draft or listing data while the account is open and as needed to run the service. Listing images may remain in storage while they are tied to an active or recently published listing.</p>
-      <p>When you delete your Worthly account we delete the user record, linked sellers, sessions, and credits. Instructions are on the <a href="delete-account.html">account deletion page</a>. When eBay notifies us that a marketplace account was deleted, we unlink that eBay seller only. Your Worthly account and credits remain until you delete them.</p>
-      <p>After deletion we may keep listing images already uploaded for published listings for a short operational cleanup. They are not used to identify you after the account is gone. Security and legal logs may be kept for a limited time where we need them for security, fraud prevention, or law. Google Play purchase records remain with Google.</p>
-      <!-- TODO: Confirm how long listing images and security logs are kept after deletion. The existing deletion page says images "may remain briefly" and does not state a number of days. -->
+      <p>We keep your account, linked eBay credentials, and listing data while the account is open and as needed to run the service.</p>
+      <p>When you delete your Worthly account we delete the user record, the email or Google identity, hashed sessions, the credit balance, and linked eBay sellers and tokens. On the device you use, that deletion also clears local assessments, preferences, drafts, photos, and eBay-linked data stored on that device. Live eBay listings are not ended. Instructions are on the <a href="delete-account.html">account deletion page</a>.</p>
+      <p>When eBay notifies us that a marketplace account was deleted, we unlink that eBay seller only. Your Worthly account and credits remain until you delete them.</p>
+      <!-- TODO: State the retention period for Google Cloud Storage listing images and for security logs after account deletion. The deletion routine described in source removes the user, sessions, credits, and eBay tokens, and clears on-device drafts and photos. It does not state a retention window for stored listing images or logs. -->
+      <p>Google Play and Apple purchase records remain with those companies. Security logs may be kept where we need them for security, fraud prevention, or the law. They are not used to keep providing a deleted account.</p>
 
       <h2 id="choices">Your choices</h2>
       <ul>
         <li>Sign out to revoke that device’s session.</li>
-        <li>Unlink an eBay seller in Account without deleting credits.</li>
-        <li>Delete the Worthly account in the app (Account, then Delete Worthly account) or from the <a href="delete-account.html">deletion page</a>. Credits are deleted with the account.</li>
+        <li>Unlink an eBay seller without deleting credits.</li>
+        <li>Delete the Worthly account in the app: open Account in the title bar, tap Delete Worthly account, and confirm. You can also use the <a href="delete-account.html">deletion page</a>. Credits are deleted with the account.</li>
         <li>Revoke the app in your eBay account settings.</li>
-        <li>Deny or turn off camera, photos, and location in the device settings.</li>
+        <li>Deny or turn off camera and location in the device settings. You can type a postal code instead of sharing location.</li>
       </ul>
 
       <h2 id="children">Children</h2>
-      <p>The app is not directed to children under 13, and we do not knowingly collect personal information from children under 13. The terms also require you to be at least 18 to create an account. If you believe a child has given us personal information, email <a href="mailto:jsherman314@gmail.com">jsherman314@gmail.com</a> and we will delete it.</p>
+      <p>The app is not directed to children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has given us personal information, email <a href="mailto:support@worthly-llc.com">support@worthly-llc.com</a> and we will delete it.</p>
+      <!-- TODO: The terms on this site also require age 18 to create an account, which is how the previously published terms read. The source extract confirms only the under-13 rule. Play rates the app Everyone. Confirm whether 18 stays in the terms. -->
 
       <h2 id="security">Security</h2>
-      <p>The app and this website use encrypted transport (HTTPS). eBay refresh tokens are encrypted at rest, and access to the backend is limited to operating the service. No method of transmission or storage is completely secure.</p>
+      <p>The app and this website use encrypted transport (HTTPS). eBay refresh tokens are encrypted with AES-256-GCM, and access to the backend is limited to operating the service. No method of transmission or storage is completely secure.</p>
 
       <h2 id="international">International processing</h2>
-      <p>We process information in the United States and in other countries where our providers operate, including Google, eBay, RevenueCat, and the AI provider. If you use the app from another country, you understand your information may be processed in those places.</p>
+      <p>We process information in the United States and in other countries where our providers operate, including Google, eBay, RevenueCat, Apple, and OpenAI. If you use the app from another country, your information may be processed in those places.</p>
 
       <h2 id="website">This website</h2>
-      <p>worthly-llc.com is a static site. Worthly LLC does not run accounts, cookies, or analytics on it, and the pages do not load third-party fonts or trackers. The site is hosted on GitHub Pages. GitHub may record ordinary connection logs for that hosting. Email you send us is received at the address below.</p>
+      <p>worthly-llc.com is a static site hosted on GitHub Pages. Worthly LLC does not run accounts, cookies, or analytics on it, and the pages do not load third-party fonts or trackers. GitHub may record ordinary connection logs for that hosting. Email you send us is received at <a href="mailto:support@worthly-llc.com">support@worthly-llc.com</a>.</p>
 
       <h2 id="changes">Changes</h2>
       <p>We may update this policy. The date at the top will change when we do. If a change materially reduces your rights, we will also take any extra step the law requires. Continued use of the app after the updated policy is posted means you accept the revision, except where the law requires a different form of notice or consent.</p>
 
       <h2 id="contact">Contact</h2>
       <p>Worthly LLC<br>
-      Privacy questions or deletion requests: <a href="mailto:jsherman314@gmail.com?subject=Worthly%20privacy">jsherman314@gmail.com</a></p>
+      Privacy questions or deletion requests: <a href="mailto:support@worthly-llc.com?subject=Worthly%20privacy">support@worthly-llc.com</a></p>
       <p>See also the <a href="terms.html">Terms of Service</a> and <a href="delete-account.html">account deletion</a> pages. Those terms are governed by the laws of the Commonwealth of Virginia, United States.</p>
     </article>
   </main>
