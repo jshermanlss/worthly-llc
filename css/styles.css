@@ -445,13 +445,37 @@ th {
   display: inline-block;
   margin: 0 0 0.65rem;
   padding: 0.18rem 0.55rem;
+  border: 1px solid transparent;
   border-radius: 999px;
-  background: var(--teal);
-  color: #fff;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
+  line-height: 1.2;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pack .badge-starter {
+  background: transparent;
+  color: #1f1f1f;
+  border-color: #c4bfb4;
+}
+
+.pack .badge-great {
+  background: #0f766e;
+  color: #f7f5f0;
+  border-color: #0f766e;
+}
+
+.pack .badge-best {
+  background: linear-gradient(160deg, #d4af37, #b08d57);
+  color: #1f1f1f;
+  border-color: #b08d57;
+}
+
+.pack-best {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.35);
 }
 
 .note {
